@@ -233,11 +233,11 @@
  */
 -(CGFloat)getCellHeightWithMark:(NSInteger)mark
 {
-    NSDate * monthDate = [[BKCalendar shareManager] getMonthDateWithindex:mark];
-    NSInteger allMonthDayNum = [[BKCalendar shareManager] getNumberOfDaysInMonthDate:monthDate];
+    NSDate * monthDate = [[NSDate date] getMonthDateAccordingToGapsNumber:mark];
+    NSInteger allMonthDayNum = [monthDate getNumberOfDaysPerMonth];
     
-    NSDate * monthFirstDate = [[BKCalendar shareManager] getDayDateInMonthDate:monthDate andIndex:1];
-    NSInteger weekNumber = [[BKCalendar shareManager] getNumberInWeekDate:monthFirstDate];
+    NSDate * monthFirstDate = [monthDate getFirstDayInMonth];
+    NSInteger weekNumber = [monthFirstDate getCurrentWeek];
     
     NSInteger row = (allMonthDayNum + weekNumber)/7 + ((allMonthDayNum + weekNumber)%7>0?1:0);
     
@@ -255,8 +255,8 @@
  */
 -(void)calendarViewCell:(BKCalendarViewCell*)cell assignDataWithMark:(NSInteger)mark
 {
-    NSDate * monthDate = [[BKCalendar shareManager] getMonthDateWithindex:mark];
-    NSDate * monthFirstDate = [[BKCalendar shareManager] getDayDateInMonthDate:monthDate andIndex:1];
+    NSDate * monthDate = [[NSDate date] getMonthDateAccordingToGapsNumber:mark];
+    NSDate * monthFirstDate = [monthDate getFirstDayInMonth];
     [cell assignDataWithFirstDayInMonthDate:monthFirstDate];
 }
 
