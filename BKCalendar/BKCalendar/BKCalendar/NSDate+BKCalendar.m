@@ -41,6 +41,12 @@
 
 #pragma mark - 关于年
 
++(NSInteger)calcYearNumber
+{
+    NSDateComponents * components = [self.calendar components:NSCalendarUnitYear fromDate:[NSDate date]];
+    return components.year;
+}
+
 -(NSInteger)calcYearNumber
 {
     NSDateComponents * components = [self.calendar components:NSCalendarUnitYear fromDate:self];
@@ -106,6 +112,12 @@
 }
 
 #pragma mark - 关于月
+
++(NSInteger)calcMonthNumber
+{
+    NSDateComponents * components = [self.calendar components:NSCalendarUnitMonth fromDate:[NSDate date]];
+    return components.month;
+}
 
 -(NSInteger)calcMonthNumber
 {
@@ -173,6 +185,12 @@
 
 #pragma mark - 关于天
 
++(NSInteger)calcDayNumberInMonth
+{
+    NSDateComponents * components = [self.calendar components:NSCalendarUnitDay fromDate:[NSDate date]];
+    return components.day;
+}
+
 -(NSInteger)calcDayNumberInMonth
 {
     NSDateComponents * components = [self.calendar components:NSCalendarUnitDay fromDate:self];
@@ -197,7 +215,7 @@
 
 #pragma mark - 关于星期
 
-+(NSInteger)getCurrentWeek
++(NSInteger)calcCurrentDateWeek
 {
     NSArray * weeks = @[[NSNull null],@"7",@"1",@"2",@"3",@"4",@"5",@"6"];
     NSDateComponents * components = [self.calendar components:NSCalendarUnitWeekday fromDate:[NSDate date]];
@@ -208,7 +226,7 @@
     return index;
 }
 
--(NSInteger)getCurrentWeek
+-(NSInteger)calcCurrentDateWeek
 {
     NSArray * weeks = @[[NSNull null],@"7",@"1",@"2",@"3",@"4",@"5",@"6"];
     NSDateComponents * components = [self.calendar components:NSCalendarUnitWeekday fromDate:self];
@@ -217,6 +235,22 @@
         return 0;
     }
     return index;
+}
+
++(NSDate*)getWeekDateAccordingToGapsNumber:(NSInteger)number
+{
+    NSDateComponents * components = [[NSDateComponents alloc] init];
+    components.weekdayOrdinal = number;
+    NSDate * weekDate = [self.calendar dateByAddingComponents:components toDate:[NSDate date] options:NSCalendarMatchStrictly];
+    return [weekDate transformLocaleDate];
+}
+
+-(NSDate*)getWeekDateAccordingToGapsNumber:(NSInteger)number
+{
+    NSDateComponents * components = [[NSDateComponents alloc] init];
+    components.weekdayOrdinal = number;
+    NSDate * weekDate = [self.calendar dateByAddingComponents:components toDate:self options:NSCalendarMatchStrictly];
+    return [weekDate transformLocaleDate];
 }
 
 #pragma mark - 转化系统时区时间

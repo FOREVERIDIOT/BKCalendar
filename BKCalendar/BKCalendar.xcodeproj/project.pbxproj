@@ -19,6 +19,9 @@
 		1DB67A902174838D00168921 /* BKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB67A862174838D00168921 /* BKCalendarView.m */; };
 		1DB67A912174838D00168921 /* BKDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB67A872174838D00168921 /* BKDayModel.m */; };
 		1DB67A922174838D00168921 /* BKCalendar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DB67A892174838D00168921 /* BKCalendar.bundle */; };
+		1DB8528E2176CC6700F0BF03 /* BKCalendarExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8528D2176CC6700F0BF03 /* BKCalendarExampleViewController.m */; };
+		1DB852912176CCF900F0BF03 /* BKExampleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB852902176CCF900F0BF03 /* BKExampleDetailsViewController.m */; };
+		1DB852952177050900F0BF03 /* BKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB852942177050900F0BF03 /* BKPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,12 @@
 		1DB67A892174838D00168921 /* BKCalendar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BKCalendar.bundle; sourceTree = "<group>"; };
 		1DB67A8A2174838D00168921 /* BKMonthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMonthModel.h; sourceTree = "<group>"; };
 		1DB67A8B2174838D00168921 /* BKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCalendarView.h; sourceTree = "<group>"; };
+		1DB8528C2176CC6700F0BF03 /* BKCalendarExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKCalendarExampleViewController.h; sourceTree = "<group>"; };
+		1DB8528D2176CC6700F0BF03 /* BKCalendarExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKCalendarExampleViewController.m; sourceTree = "<group>"; };
+		1DB8528F2176CCF900F0BF03 /* BKExampleDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKExampleDetailsViewController.h; sourceTree = "<group>"; };
+		1DB852902176CCF900F0BF03 /* BKExampleDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKExampleDetailsViewController.m; sourceTree = "<group>"; };
+		1DB852932177050900F0BF03 /* BKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKPickerView.h; sourceTree = "<group>"; };
+		1DB852942177050900F0BF03 /* BKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +87,16 @@
 		1DB67A6721747CD600168921 /* BKCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				1DB852922177050900F0BF03 /* BKPickerView */,
 				1DB67A7E2174836400168921 /* BKCalendar */,
 				1DB67A6821747CD600168921 /* AppDelegate.h */,
 				1DB67A6921747CD600168921 /* AppDelegate.m */,
 				1DB67A6B21747CD600168921 /* ViewController.h */,
 				1DB67A6C21747CD600168921 /* ViewController.m */,
+				1DB8528C2176CC6700F0BF03 /* BKCalendarExampleViewController.h */,
+				1DB8528D2176CC6700F0BF03 /* BKCalendarExampleViewController.m */,
+				1DB8528F2176CCF900F0BF03 /* BKExampleDetailsViewController.h */,
+				1DB852902176CCF900F0BF03 /* BKExampleDetailsViewController.m */,
 				1DB67A7121747CD700168921 /* Assets.xcassets */,
 				1DB67A7621747CD700168921 /* Info.plist */,
 				1DB67A7721747CD700168921 /* main.m */,
@@ -111,6 +125,15 @@
 				1DB67A7F2174838C00168921 /* BKMonthModel.m */,
 			);
 			path = BKCalendar;
+			sourceTree = "<group>";
+		};
+		1DB852922177050900F0BF03 /* BKPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				1DB852932177050900F0BF03 /* BKPickerView.h */,
+				1DB852942177050900F0BF03 /* BKPickerView.m */,
+			);
+			path = BKPickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +214,9 @@
 				1DB67A902174838D00168921 /* BKCalendarView.m in Sources */,
 				1DB67A912174838D00168921 /* BKDayModel.m in Sources */,
 				1D3F9E7C217591B2008B4F94 /* NSDate+BKCalendar.m in Sources */,
+				1DB8528E2176CC6700F0BF03 /* BKCalendarExampleViewController.m in Sources */,
+				1DB852952177050900F0BF03 /* BKPickerView.m in Sources */,
+				1DB852912176CCF900F0BF03 /* BKExampleDetailsViewController.m in Sources */,
 				1DB67A6A21747CD600168921 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

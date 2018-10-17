@@ -74,7 +74,7 @@
         });
         
         NSInteger allMonthDayNum = [date getNumberOfDaysPerMonth];
-        NSInteger weekNumber = [date getCurrentWeek];
+        NSInteger weekNumber = [date calcCurrentDateWeek];
         NSInteger monthNumber = [date calcMonthNumber];
         
         CGFloat width = [UIScreen mainScreen].bounds.size.width/7.0f;

@@ -15,7 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 关于年
 
 /**
- 计算date的年份
+ 以系统时间为准 计算date的年份
+ 
+ @return 年份
+ */
++(NSInteger)calcYearNumber;
+
+/**
+ 以对象时间为准 计算date的年份
  
  @return 年份
  */
@@ -84,7 +91,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 关于月
 
 /**
- 计算date的月份
+ 以系统时间为准 计算date的月份
+ 
+ @return 月份
+ */
++(NSInteger)calcMonthNumber;
+
+/**
+ 以对象时间为准 计算date的月份
  
  @return 月份
  */
@@ -153,7 +167,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 关于天
 
 /**
- 计算date在一月中是几号
+ 以系统时间为准 计算date在一月中是几号
+ 
+ @return 几号
+ */
++(NSInteger)calcDayNumberInMonth;
+
+/**
+ 以对象时间为准 计算date在一月中是几号
  
  @return 几号
  */
@@ -184,14 +205,32 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 0是星期天 1是星期一 2是星期二 3是星期三 4是星期四 5是星期五 6是星期六
  */
-+(NSInteger)getCurrentWeek;
++(NSInteger)calcCurrentDateWeek;
 
 /**
  以对象时间为准 获取当日为星期几
 
  @return 0是星期天 1是星期一 2是星期二 3是星期三 4是星期四 5是星期五 6是星期六
  */
--(NSInteger)getCurrentWeek;
+-(NSInteger)calcCurrentDateWeek;
+
+/**
+ 以系统时间为准 根据间隔数获取某星期date
+ 例子 当前时间为2018-01-01 16:00 星期二 number为1 返回结果为2018-01-08 16:00 星期二
+ 
+ @param number 2为下下星期 1为下星期 0为这个星期 -1为上星期 -2为上上星期 以此类推
+ @return 星期date
+ */
++(NSDate*)getWeekDateAccordingToGapsNumber:(NSInteger)number;
+
+/**
+ 以对象时间为准 根据间隔数获取某星期date
+ 例子 当前时间为2018-01-01 16:00 星期二 number为1 返回结果为2018-01-08 16:00 星期二
+ 
+ @param number 2为下下星期 1为下星期 0为这个星期 -1为上星期 -2为上上星期 以此类推
+ @return 星期date
+ */
+-(NSDate*)getWeekDateAccordingToGapsNumber:(NSInteger)number;
 
 #pragma mark - 转化系统时区时间
 

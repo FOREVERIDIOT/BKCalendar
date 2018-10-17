@@ -237,7 +237,7 @@
     NSInteger allMonthDayNum = [monthDate getNumberOfDaysPerMonth];
     
     NSDate * monthFirstDate = [monthDate getFirstDayInMonth];
-    NSInteger weekNumber = [monthFirstDate getCurrentWeek];
+    NSInteger weekNumber = [monthFirstDate calcCurrentDateWeek];
     
     NSInteger row = (allMonthDayNum + weekNumber)/7 + ((allMonthDayNum + weekNumber)%7>0?1:0);
     
